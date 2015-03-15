@@ -3,7 +3,7 @@ package controllers;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.Index;
-import views.html.Page1;
+import views.html.newcontact;
 
 /**
  * Provides controllers for this application.
@@ -22,8 +22,8 @@ public class Application extends Controller {
    * Returns page1, a simple example of a second page to illustrate navigation.
    * @return The Page1.
    */
-  public static Result page1() {
-    return ok(Page1.render("Welcome to Page1."));
+  public static Result newcontact() {
+    return ok(newcontact.render("Welcome to the new contact page."));
 
   }
 
