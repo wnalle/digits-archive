@@ -26,7 +26,7 @@ public class IntegrationTest {
         browser.goTo("http://localhost:3333");
         assertThat(browser.pageSource()).contains("Current Contacts");
 
-        browser.goTo("http://localhost:3333/newcontact");
+        browser.goTo("http://localhost:3333/NewContact");
         assertThat(browser.pageSource()).contains("New Contact");
       }
     });
