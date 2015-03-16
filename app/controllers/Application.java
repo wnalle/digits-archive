@@ -5,7 +5,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.formData.ContactFormData;
 import views.html.Index;
-import views.html.newcontact;
+import views.html.NewContact;
 
 /**
  * Provides controllers for this application.
@@ -26,7 +26,7 @@ public class Application extends Controller {
    */
   public static Result newContact() {
     Form<ContactFormData> formData = Form.form(ContactFormData.class);
-    return ok(newcontact.render(formData));
+    return ok(NewContact.render(formData));
 
   }
 
@@ -36,8 +36,14 @@ public class Application extends Controller {
    */
   public static Result postContact() {
     Form<ContactFormData> formData = Form.form(ContactFormData.class).bindFromRequest();
-    ContactFormData data = formData.get();
-    System.out.printf("Got data: %s %s %s %n\n", data.firstName, data.lastName, data.telephone);
-    return ok(newcontact.render(formData));
+    if (formData.hasErrors()) {
+      System.out.println("Errors found.");
+      return badRequest(NewContact.render(formData));
+    }
+    else {
+      ContactFormData data = formData.get();
+      System.out.printf("Got data: %s %s %s %n\n", data.firstName, data.lastName, data.telephone);
+      return ok(NewContact.render(formData));
+    }
   }
 }
