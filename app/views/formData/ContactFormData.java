@@ -25,6 +25,10 @@ public class ContactFormData {
     // no arg constructor
   }
 
+  /**
+   * Create a contact form from contact.
+   * @param contact The contact information.
+   */
   public ContactFormData(Contact contact){
     this.firstName = contact.getFirstName();
     this.lastName = contact.getLastName();

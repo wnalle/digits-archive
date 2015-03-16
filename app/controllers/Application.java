@@ -23,6 +23,7 @@ public class Application extends Controller {
 
   /**
    * Handles the rquest to get the new contact page.
+   * @param id The id.
    * @return The NewContact page.
    */
   public static Result newContact(Long id) {

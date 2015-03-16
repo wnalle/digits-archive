@@ -51,6 +51,11 @@ public class ContactDB {
     return new ArrayList<>(contacts.values());
   }
 
+  /**
+   * Get a contact from an id.
+   * @param id The id.
+   * @return The contact.
+   */
   public static Contact getContact(Long id) {
     return contacts.get(id);
   }
