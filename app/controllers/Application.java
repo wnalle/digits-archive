@@ -6,7 +6,6 @@ import play.mvc.Result;
 import views.formData.ContactFormData;
 import views.html.Index;
 import views.html.NewContact;
-
 /**
  * Provides controllers for this application.
  */
